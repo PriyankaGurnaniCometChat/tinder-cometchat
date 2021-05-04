@@ -6,4 +6,4 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 };
 
-export { firebaseConfig };
+export default firebaseConfig;

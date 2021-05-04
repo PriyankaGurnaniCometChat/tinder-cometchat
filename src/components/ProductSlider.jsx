@@ -14,7 +14,7 @@ export default function ProductSlider({ title, products }) {
             2 / window.innerWidth
           }))`,
         }}
-        className={`grid gap-2 md:gap-4 grid-rows-1 overflow-x-scroll whitespace-nowrap my-4`}
+        className="grid gap-2 md:gap-4 grid-rows-1 overflow-x-scroll whitespace-nowrap my-4"
       >
         {React.Children.toArray(
           products.map((product) => (
@@ -25,7 +25,7 @@ export default function ProductSlider({ title, products }) {
                 className="h-24 md:w-24 md:my-3"
               />
             </Link>
-          ))
+          )),
         )}
       </div>
     </div>

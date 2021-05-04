@@ -1,15 +1,19 @@
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    fontSize: {
-      huge: "9rem",
-    },
     extend: {},
   },
   variants: {
     extend: {
-      display: ["group-hover"],
+      height: ['group-hover'],
+      display: ['group-hover'],
+      textOverflow: ['group-hover'],
+      overflow: ['group-hover'],
+      whitespace: ['group-hover'],
+      backgroundImage: ['group-hover'],
+      inset: ['group-hover'],
+      cursor: ['hover'],
     },
   },
   plugins: [],

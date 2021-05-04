@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-unreachable */
+import React from 'react';
 
 export default function Footer() {
   return <></>;
@@ -111,7 +112,7 @@ export default function Footer() {
       <div className="bg-gray-800 w-full flex justify-center items-center mx-auto py-4 lg:py-6 border-t border-gray-700">
         <div className="inline-flex">
           <a className="_o6689fn" href="/">
-            <img src="/logo-white.png" className="w-24" alt="Logo"></img>
+            <img src="/logo-white.png" className="w-24" alt="Logo" />
           </a>
         </div>
       </div>

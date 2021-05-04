@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import firebase from "firebase";
-import "firebase/auth";
-import { Route, BrowserRouter, Switch, Redirect } from "react-router-dom";
-import IndexPage from "./pages";
-import DiscoverPage from "./pages/discover";
-import InboxPage from "./pages/inbox";
-import LoginPage from "./pages/login";
-import LogoutPage from "./pages/logout";
-import NewProductPage from "./pages/newProduct";
-import ProductPage from "./pages/product";
-import RegisterPage from "./pages/register";
+import React, { useEffect } from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
+import {
+  Route, BrowserRouter, Switch, Redirect,
+} from 'react-router-dom';
+import IndexPage from './pages';
+import DiscoverPage from './pages/discover';
+import InboxPage from './pages/inbox';
+import LoginPage from './pages/login';
+import LogoutPage from './pages/logout';
+import RegisterPage from './pages/register';
 
 function App() {
   useEffect(() => {
@@ -21,11 +21,14 @@ function App() {
           .doc(`/users/${user.uid}`)
           .get()
           .then((doc) => {
-            localStorage.setItem("user", JSON.stringify(doc.data()));
+            localStorage.setItem('user', JSON.stringify({
+              ...doc.data(),
+              id: doc.id,
+            }));
           });
       } else {
         // removes the user from local storage on logOut
-        localStorage.removeItem("user");
+        localStorage.removeItem('user');
       }
     });
   }, []);
@@ -43,9 +46,6 @@ function App() {
           <PrivateRoute path="/inbox">
             <InboxPage />
           </PrivateRoute>
-          <Route path="/user/:id">
-            <ProductPage />
-          </Route>
           <Route path="/login">
             <LoginPage />
           </Route>
@@ -68,18 +68,16 @@ function PrivateRoute({ children, ...rest }) {
   return (
     <Route
       {...rest}
-      render={({ location }) =>
-        localStorage.getItem("user") ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: location },
-            }}
-          />
-        )
-      }
+      render={({ location }) => (localStorage.getItem('user') ? (
+        children
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/login',
+            state: { from: location },
+          }}
+        />
+      ))}
     />
   );
 }

@@ -1,34 +1,34 @@
-import React, { useReducer, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/storage";
-import "firebase/firestore";
-import { loginCometChatUser, registerCometChatUser } from "../cometchat";
-import { withLayout } from "../wrappers/layout";
+import React, { useReducer, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/storage';
+import 'firebase/firestore';
+import { loginCometChatUser, registerCometChatUser } from '../cometchat';
+import { withLayout } from '../wrappers/layout';
 
 const initialState = {
-  name: "",
-  email: "",
-  description: "",
-  password: "",
-  confirmPassword: "",
-  image: "",
+  name: '',
+  email: '',
+  description: '',
+  password: '',
+  confirmPassword: '',
+  image: '',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "name":
+    case 'name':
       return { ...state, name: action.payload };
-    case "email":
+    case 'email':
       return { ...state, email: action.payload };
-    case "description":
+    case 'description':
       return { ...state, description: action.payload };
-    case "password":
+    case 'password':
       return { ...state, password: action.payload };
-    case "confirmPassword":
+    case 'confirmPassword':
       return { ...state, confirmPassword: action.payload };
-    case "image":
+    case 'image':
       return { ...state, image: action.payload };
     default:
       throw new Error();
@@ -37,7 +37,7 @@ const reducer = (state, action) => {
 
 const RegisterPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const history = useHistory();
 
   const handleOnChange = (evt) => {
@@ -60,7 +60,7 @@ const RegisterPage = () => {
     evt.preventDefault();
 
     if (state.password !== state.confirmPassword) {
-      setError("Error: Passwords do not match.");
+      setError('Error: Passwords do not match.');
       return;
     }
 
@@ -75,19 +75,20 @@ const RegisterPage = () => {
 
         const imageUrl = await imageRef.getDownloadURL();
 
-        await firebase.firestore().collection("users").doc(uid).set({
+        await firebase.firestore().collection('users').doc(uid).set({
           name: state.name,
           description: state.description,
           imageUrl,
           likes: [],
           dislikes: [],
           favorites: [],
+          matches: [],
         });
 
         await registerCometChatUser(state.name, uid);
         await loginCometChatUser(uid);
 
-        history.push("/discover");
+        history.push('/discover');
       })
       .catch((err) => {
         setError(err.message);
@@ -117,15 +118,15 @@ const RegisterPage = () => {
                 r="1"
                 spreadMethod="pad"
               >
-                <stop offset="0%" stopColor="#ff7854"></stop>
-                <stop offset="100%" stopColor="#fd267d"></stop>
+                <stop offset="0%" stopColor="#ff7854" />
+                <stop offset="100%" stopColor="#fd267d" />
               </radialGradient>
             </defs>
             <path
               d="M8.21 10.08c-.02 0-.04 0-.06-.02-.67-.9-.84-2.44-.89-3.03 0-.11-.13-.18-.23-.12C4.93 8.08 3 10.86 3 13.54 3 18.14 6.2 22 11.7 22c5.15 0 8.7-3.98 8.7-8.46 0-5.87-4.2-9.77-7.93-11.53a.13.13 0 0 0-.19.14c.48 3.16-.18 6.6-4.07 7.93z"
               fill="url(#svg-fill-radial__tinder)"
               fillRule="nonzero"
-            ></path>
+            />
           </svg>
         </Link>
         <h3 className="text-2xl font-extrabold italic uppercase my-4">
@@ -135,7 +136,8 @@ const RegisterPage = () => {
           className="text-sm text-gray-800 text-center"
           data-nosnippet="true"
         >
-          By clicking Log in, you agree to our{" "}
+          By clicking Log in, you agree to our
+          {' '}
           <a
             className="underline focus-outline-style text-gray-600"
             href="#"
@@ -145,7 +147,8 @@ const RegisterPage = () => {
           >
             Terms
           </a>
-          . Learn how we process your data in our{" "}
+          . Learn how we process your data in our
+          {' '}
           <a
             className="underline focus-outline-style text-gray-600"
             href="#"
@@ -154,8 +157,10 @@ const RegisterPage = () => {
             aria-describedby="open-in-new-window"
           >
             Privacy Policy
-          </a>{" "}
-          and{" "}
+          </a>
+          {' '}
+          and
+          {' '}
           <a
             className="underline focus-outline-style text-gray-600"
             href="#"
@@ -285,12 +290,12 @@ const RegisterPage = () => {
             Get the app!
           </h3>
           <div className="flex justify-between items-center">
-            <img width="170" src="/appStore.webp" alt="AppStore Download"></img>
+            <img width="170" src="/appStore.webp" alt="AppStore Download" />
             <img
               width="210"
               src="/playStore.webp"
               alt="PlayStore Download"
-            ></img>
+            />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import 'firebase/auth';
 import { logoutCometChatUser } from '../cometchat';
 
 export default function LogoutPage() {
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     firebase
@@ -17,5 +17,5 @@ export default function LogoutPage() {
       });
   }, []);
 
-  return <div></div>;
+  return <div />;
 }
