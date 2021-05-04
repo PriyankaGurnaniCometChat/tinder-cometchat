@@ -9,7 +9,9 @@ This example shows how to build an Dating site like Tinder where you can rate ot
 <div>
 <img alt="Desktop Demo" src="./screenshots/desktop.gif" width=600>
 
-<img alt="Mobile Demo" src="./screenshots/mobile.gif" width=200>
+<img alt="Mobile Demo" src="./screenshots/mobile.png" width=150>
+<img alt="Mobile Demo" src="./screenshots/call1.png" width=150>
+<img alt="Mobile Demo" src="./screenshots/call2.png" width=150>
 </div>
 
 ## Technology

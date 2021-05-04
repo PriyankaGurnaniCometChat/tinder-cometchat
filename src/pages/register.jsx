@@ -83,6 +83,7 @@ const RegisterPage = () => {
           dislikes: [],
           favorites: [],
           matches: [],
+          id: uid,
         });
 
         await registerCometChatUser(state.name, uid);
@@ -290,9 +291,9 @@ const RegisterPage = () => {
             Get the app!
           </h3>
           <div className="flex justify-between items-center">
-            <img width="170" src="/appStore.webp" alt="AppStore Download" />
+            <img width="130" src="/appStore.webp" alt="AppStore Download" />
             <img
-              width="210"
+              width="170"
               src="/playStore.webp"
               alt="PlayStore Download"
             />
