@@ -7,11 +7,11 @@ Read the full tutorial here:
 This example shows how to build an Dating site like Tinder where you can rate other users and chat when you are matched with each other!
 
 <div>
-<img alt="Desktop Demo" src="./screenshots/desktop.gif" width=600>
+<img alt="Desktop Demo" src="./screenshots/desktop.gif" width=800>
 
-<img alt="Mobile Demo" src="./screenshots/mobile.png" width=150>
-<img alt="Mobile Demo" src="./screenshots/call1.png" width=150>
-<img alt="Mobile Demo" src="./screenshots/call2.png" width=150>
+<img alt="Mobile Demo" src="./screenshots/mobile.png" width=200>
+<img alt="Mobile Demo" src="./screenshots/call1.png" width=200>
+<img alt="Mobile Demo" src="./screenshots/call2.png" width=200>
 </div>
 
 ## Technology
