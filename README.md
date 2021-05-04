@@ -2,7 +2,7 @@
 
 Read the full tutorial here:
 
-[**>> How to Build a Marketplace Site With React (Amazon Clone)**](https://www.cometchat.com/tutorials/build-a-modern-android-chat-app-with-kotlin/?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat)
+[**>> How to Build a Dating Website With React (Tinder Clone)**](https://www.cometchat.com/tutorials/build-a-modern-android-chat-app-with-kotlin/?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat)
 
 This example shows how to build an Dating site like Tinder where you can rate other users and chat when you are matched with each other!
 
