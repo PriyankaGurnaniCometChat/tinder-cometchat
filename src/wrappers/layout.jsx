@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const withLayout = (
   BaseComponent,
@@ -24,7 +23,6 @@ const withLayout = (
         </div>
       </div>
     </main>
-    <Footer />
   </>
 );
 
