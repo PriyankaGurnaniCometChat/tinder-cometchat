@@ -28,11 +28,9 @@ This demo uses:
 
 To run the demo follow these steps:
 
-1. [Head to CometChat Pro and create an account](https://www.cometchat.com/pro?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat)
-2. From the [dashboard](https://app.cometchat.com/signup?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-marketplace-cometchat), create a new app called "Marketplace Chat"
-3. Once created, click **Explore**
-4. Go to the **API Keys** tab and click **Create API Key**
-5. Create an API key called "Marketplace Chat Key" with **Full Access**
+1. [Head to CometChat Pro and create an account](https://www.cometchat.com/pro?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-tinder-cometchat)
+2. From the [dashboard](https://app.cometchat.com/signup?utm_source=github&utm_medium=link&utm_campaign=igorasilveira-tinder-cometchat), create a new app called "Tinder Chat"
+3. Once created, you will have your credentials right on top of the page. If not, head over to the **API & AUTH KEYS** section on the menu on the left.
 4. Clone the repository by running `git clone git@github.com:igorasilveira/tinder-cometchat.git` and open it in your editor of choice.
 5. Copy the [`.env.example`](https://github.com/igorasilveira/marketplace-cometchat/blob/main/.env.example) and rename it to `.env` and update the COMETCHAT related variables with your `appId`, `authKey` and `region`.
 6. Run `npm install` on the root of the project to install dependencies.
